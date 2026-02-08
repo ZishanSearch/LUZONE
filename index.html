@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUZONE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <h1>LUZONE</h1>
+          <a
+            class="app__byline"
+            href="https://www.instagram.com/itss_zishan_001/"
+            target="_blank"
+            rel="noopener"
+            >by Zishan</a
+          >
+        </div>
+        <p class="app__subtitle">
+          Upload a target image + your face image to generate a styled output.
+        </p>
+      </header>
+
+      <section class="upload-grid">
+        <label class="upload-card">
+          <span class="upload-card__title">Target Image</span>
+          <input id="targetInput" type="file" accept="image/*" />
+          <div class="upload-card__preview" id="targetPreview">
+            <span>Upload target style image</span>
+          </div>
+        </label>
+
+        <label class="upload-card">
+          <span class="upload-card__title">Your Image</span>
+          <input id="faceInput" type="file" accept="image/*" />
+          <div class="upload-card__preview" id="facePreview">
+            <span>Upload your face image</span>
+          </div>
+        </label>
+      </section>
+
+      <section class="actions">
+        <button id="generateBtn" class="primary">Generate Image</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+      </section>
+
+      <section class="controls">
+        <div class="control">
+          <label for="blendRange">Style Blend</label>
+          <input id="blendRange" type="range" min="10" max="90" value="40" />
+        </div>
+        <div class="status" id="statusMessage">Ready to generate.</div>
+      </section>
+
+      <section class="result">
+        <div class="result__header">
+          <h2>Generated Output</h2>
+          <span class="result__note">Style from target + face from your image</span>
+        </div>
+        <div class="result__canvas">
+          <canvas id="outputCanvas" width="640" height="420"></canvas>
+        </div>
+        <a id="downloadLink" class="download" href="#" download="luzone-output.png">Download</a>
+      </section>
+
+      <section class="history">
+        <div class="history__header">
+          <h2>History</h2>
+          <button id="clearHistoryBtn" class="ghost">Clear History</button>
+        </div>
+        <div id="historyGrid" class="history__grid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
